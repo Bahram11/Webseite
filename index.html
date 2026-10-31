@@ -15,9 +15,7 @@
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"TecNexis","description":"Glasfasermontage, LWL-Spleißtechnik, Kabelverlegung, Hausanschlüsse und Netzwerkinfrastruktur.","telephone":"+49 176 41945276","email":"info@tecnexis.de","address":{"@type":"PostalAddress","streetAddress":"Alter Stadtweg 7a","postalCode":"38110","addressLocality":"Braunschweig","addressCountry":"DE"}}
 </script>
 <style>
-/* Layout concept: dunkler Hero mit lebendem Faser-Canvas, danach abwechselnd helle und dunkle Bänder.
-   Technische Kennwerte (nm, G.652.D, OTDR) in Mono tragen die Fachkompetenz.
-   PLATZHALTER ersetzen: "TecNexis", "info@tecnexis.de", "+49 176 41945276", "Alter Stadtweg 7a, 38110 Braunschweig". */
+/* Layout concept: dunkler Hero mit lebendem Faser-Canvas, danach abwechselnd helle und dunkle Bänder. */
 :root{
   --navy-900:#061427; --navy-800:#0A2342; --navy-700:#123560; --cyan:#19C3D6; --cyan-bright:#4FE3F2;
   --on-dark:#EAF4FB; --on-dark-muted:#A9BFD3; --line-dark:rgba(255,255,255,.12);
@@ -93,8 +91,6 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
 .hero h1 em{font-style:normal;color:var(--cyan-bright)}
 .hero .sub{font-size:clamp(1.05rem,1.8vw,1.3rem);color:var(--on-dark-muted);max-width:56ch;margin-top:26px}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
-.spec{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:clamp(40px,7vw,80px);padding-top:22px;border-top:1px solid var(--line-dark);font:400 .78rem/1.4 var(--mono);color:var(--on-dark-muted);letter-spacing:.04em}
-.spec b{color:var(--cyan-bright);font-weight:500}
 
 /* Intro */
 .intro{display:grid;gap:clamp(32px,6vw,80px);grid-template-columns:1fr}
@@ -116,6 +112,11 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
 .card:hover{transform:translateY(-5px);border-color:var(--cyan);box-shadow:0 18px 40px -18px rgba(10,35,66,.35)}
 .card:hover::after{transform:scaleX(1)}
 .card:hover .ico{background:var(--cyan);color:var(--navy-900)}
+.card-cta{background:linear-gradient(135deg,var(--navy-800),var(--navy-700));color:#fff;border-color:rgba(79,227,242,.35);text-decoration:none;justify-content:space-between;gap:18px}
+.card-cta h3{font-size:1.5rem}
+.card-cta p{color:var(--on-dark-muted)}
+.card-cta .btn{align-self:flex-start}
+.card-cta:hover .btn{background:var(--cyan-bright)}
 .card .tag{font:500 .7rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent-text)}
 .card h3{font-size:1.28rem}
 .card p{color:var(--muted);font-size:.97rem}
@@ -133,11 +134,6 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
 .traits svg{flex:none;width:22px;height:22px;margin-top:2px;stroke:var(--cyan-bright);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .traits b{display:block;font-weight:600}
 .traits span{color:var(--on-dark-muted);font-size:.93rem}
-.fcode{margin-top:28px;padding-top:22px;border-top:1px solid var(--line-dark);position:relative}
-.fcode p{font:400 .72rem/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-muted);margin-bottom:12px}
-.fcode div{display:grid;grid-template-columns:repeat(12,1fr);gap:4px}
-.fcode i{height:10px;border-radius:5px;background:var(--c);box-shadow:0 0 0 1px rgba(255,255,255,.18) inset;transition:transform .25s}
-.fcode i:hover{transform:scaleY(2)}
 
 /* Warum wir */
 .why{display:grid;gap:20px;grid-template-columns:1fr}
@@ -165,6 +161,16 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
 .shot figcaption small{display:block;font:500 .68rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--cyan-bright);margin-bottom:6px}
 .shot figcaption span{font-weight:600}
 .shot[hidden]{display:none}
+.refs{margin-top:clamp(40px,6vw,72px);padding-top:32px;border-top:1px solid var(--line)}
+.refs-h{font:500 .75rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text);margin-bottom:18px}
+.ref-list{list-style:none;margin:0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.ref{display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);min-width:0;max-width:340px;transition:border-color .3s,box-shadow .3s}
+.ref:hover{border-color:var(--cyan);box-shadow:0 18px 40px -22px rgba(10,35,66,.4)}
+.ref-logo{background:var(--navy-800);padding:30px 36px;display:grid;place-items:center}
+.ref-logo img{display:block;width:100%;max-width:200px;height:auto}
+.ref-meta{padding:16px 20px 18px}
+.ref b{display:block;font:700 1.15rem/1.2 var(--display)}
+.ref small{display:block;color:var(--muted);font-size:.9rem}
 .note{margin-top:22px;font:400 .8rem/1.5 var(--mono);color:var(--muted)}
 
 /* Kontakt */
@@ -183,7 +189,7 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
 .map-body{padding:16px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
 .map-body p{font-size:.85rem;color:var(--muted);flex:1 1 220px}
 .map-body .btn{min-height:44px;padding:0 20px;font-size:.92rem}
-.form-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,4vw,40px);min-width:0;box-shadow:0 30px 60px -40px rgba(10,35,66,.4)}
+.form-card{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,4vw,40px);min-width:0;box-shadow:0 30px 60px -40px rgba(10,35,66,.4)}
 .form-card h3{font-size:1.4rem;margin-bottom:6px}
 .form-card>p{color:var(--muted);font-size:.95rem;margin-bottom:24px}
 .grid2{display:grid;gap:16px;grid-template-columns:1fr}
@@ -191,13 +197,13 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
 .field{display:flex;flex-direction:column;gap:7px;min-width:0;margin-bottom:16px}
 .field label{font-weight:600;font-size:.88rem}
 .field label i{font-style:normal;color:var(--muted);font-weight:400}
-.field input,.field textarea{width:100%;min-height:50px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--field);color:var(--fg);font:400 1rem/1.4 var(--body);transition:border-color .2s,box-shadow .2s}
+.field input,.field textarea,.field select{width:100%;min-height:50px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--field);color:var(--fg);font:400 1rem/1.4 var(--body);transition:border-color .2s,box-shadow .2s}
 .field textarea{min-height:140px;resize:vertical}
-.field input:focus,.field textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 4px rgba(25,195,214,.2)}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 4px rgba(25,195,214,.2)}
 .field .err{display:none;color:#C23A3A;font-size:.85rem;font-weight:500}
 :root[data-theme="dark"] .field .err{color:#FF8F8F}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .field .err{color:#FF8F8F}}
-.field.invalid input,.field.invalid textarea{border-color:#C23A3A}
+.field.invalid input,.field.invalid textarea,.field.invalid select{border-color:#C23A3A}
 .field.invalid .err{display:block}
 .check{display:flex;gap:12px;align-items:flex-start;font-size:.88rem;color:var(--muted);margin-bottom:6px}
 .check input{width:22px;height:22px;flex:none;margin:1px 0 0;accent-color:var(--cyan)}
@@ -207,6 +213,31 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
 .status{display:none;margin-top:18px;padding:16px 18px;border-radius:12px;background:rgba(25,195,214,.12);border:1px solid var(--cyan);font-size:.95rem}
 .status.show{display:block}
 .status small{display:block;margin-top:8px;font:400 .75rem/1.5 var(--mono);color:var(--muted)}
+
+/* Karriere */
+.career{display:grid;gap:clamp(32px,6vw,72px);grid-template-columns:1fr}
+@media (min-width:960px){.career{grid-template-columns:1fr 1fr;align-items:start}}
+.career>*{min-width:0}
+.jobs{display:grid;gap:14px;margin-top:34px}
+.job{border:1px solid var(--line-dark);border-radius:var(--radius);background:rgba(255,255,255,.03);overflow:hidden;min-width:0;transition:border-color .3s,background .3s}
+.job:hover,.job[open]{border-color:rgba(79,227,242,.5);background:rgba(25,195,214,.05)}
+.job summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px;font:700 1.15rem/1.3 var(--display);color:#fff}
+.job summary::-webkit-details-marker{display:none}
+.job summary::after{content:"";flex:none;width:10px;height:10px;margin-right:4px;border-right:2px solid var(--cyan-bright);border-bottom:2px solid var(--cyan-bright);transform:rotate(45deg);transition:transform .25s}
+.job[open] summary::after{transform:rotate(-135deg)}
+.job-body{padding:0 22px 24px;color:var(--on-dark-muted);font-size:.96rem}
+.job-body h4{font:500 .72rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--cyan-bright);margin:18px 0 10px}
+.job-body ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.job .btn{margin-top:22px;min-height:46px;padding:0 22px;font-size:.95rem}
+.job-plain{padding:22px}
+.job-plain h3{font-size:1.15rem;color:#fff;margin-bottom:8px}
+.job-plain p{color:var(--on-dark-muted);font-size:.96rem}
+.field select{appearance:auto}
+.field input[type=file]{padding:10px 12px;min-height:0;cursor:pointer}
+.field input[type=file]::file-selector-button{margin-right:12px;border:0;border-radius:8px;padding:9px 14px;background:var(--cyan);color:var(--navy-900);font:600 .88rem/1 var(--body);cursor:pointer}
+.field ::placeholder{color:var(--muted);opacity:.8}
+.field select option{color:var(--fg);background:var(--field)}
+.field .hint{font-size:.8rem;color:var(--muted)}
 
 /* Footer */
 .site-foot{background:var(--navy-900);color:var(--on-dark);padding-top:clamp(56px,8vw,96px);padding-bottom:calc(28px + env(safe-area-inset-bottom,0px))}
@@ -272,6 +303,9 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
     <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
     <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-hub" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 9V3M12 21v-6M9 12H3M21 12h-6M5.6 5.6l3.2 3.2M15.2 15.2l3.2 3.2M18.4 5.6l-3.2 3.2M8.8 15.2l-3.2 3.2"/></symbol>
+    <symbol id="i-branch" viewBox="0 0 24 24"><path d="M12 21v-8M12 13L6 7M12 13l6-6M6 7V3M18 7V3"/></symbol>
+    <symbol id="i-ftth" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10"/><path d="M9.5 16a3.5 3.5 0 0 1 5 0M7.5 13.5a6.5 6.5 0 0 1 9 0"/><circle cx="12" cy="18.5" r=".6"/></symbol>
     <symbol id="i-flex" viewBox="0 0 24 24"><path d="M4 7h10M4 12h16M4 17h10"/><circle cx="17" cy="7" r="2"/><circle cx="17" cy="17" r="2"/></symbol>
   </defs>
 </svg>
@@ -279,7 +313,6 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
 <header class="site-head">
   <div class="wrap head-in">
     <a class="logo" href="#top" aria-label="TecNexis Fiber Connect, zur Startseite">
-      <!-- LOGO-PLATZHALTER: durch eigenes Logo (SVG) ersetzen -->
       <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2l16 9v18l-16 9L4 29V11z" fill="none" stroke="#19C3D6" stroke-width="2"/><path d="M9 25c6 0 8-10 11-10s5 10 11 10" fill="none" stroke="#4FE3F2" stroke-width="2.2" stroke-linecap="round"/><circle cx="20" cy="15" r="2.2" fill="#fff"/></svg>
       <span><b>TecNexis</b><small>Fiber Connect</small></span>
     </a>
@@ -289,6 +322,7 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
       <a href="#ueber-uns">Über uns</a>
       <a href="#warum-wir">Warum wir</a>
       <a href="#projekte">Projekte</a>
+      <a href="#karriere">Karriere</a>
       <a class="btn btn-primary" href="#kontakt">Projekt anfragen</a>
     </nav>
   </div>
@@ -304,11 +338,6 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
       <div class="cta-row">
         <a class="btn btn-primary" href="#kontakt">Jetzt Projekt anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
         <a class="btn btn-ghost" href="#leistungen">Unsere Leistungen entdecken</a>
-      </div>
-      <div class="spec" aria-label="Technische Eckdaten">
-        <span>Einmodenfaser <b>G.652.D</b></span>
-        <span>Wellenlängen <b>1310 / 1550 nm</b></span>
-        <span>Prüfverfahren <b>OTDR · Einfügedämpfung</b></span>
       </div>
     </div>
   </section>
@@ -335,17 +364,21 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
       <div class="sec-head">
         <div class="eyebrow">Unsere Leistungen</div>
         <h2 id="l-h">Alles, was ein Glasfasernetz braucht.</h2>
-        <p class="lead">Acht Leistungsbereiche, die ineinandergreifen. Sie beauftragen einzeln oder als Gesamtpaket.</p>
+        <p class="lead">Elf Leistungsbereiche, die ineinandergreifen. Sie beauftragen einzeln oder als Gesamtpaket.</p>
       </div>
       <div class="cards">
         <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-plug"/></svg></span><span class="tag">Aktivtechnik &amp; Passivtechnik</span><h3>Glasfasermontage</h3><p>Montage von Verteilern, Patchfeldern und Abschlusspunkten. Sauber geführt, eindeutig beschriftet und betriebsbereit übergeben.</p></article>
         <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-reel"/></svg></span><span class="tag">Kabel &amp; Trasse</span><h3>Glasfaserkabelverlegung</h3><p>Verlegung von Außen- und Innenkabeln in Rohr, Schacht und Gebäude. Zugkräfte und Biegeradien bleiben im Herstellerrahmen.</p></article>
         <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-splice"/></svg></span><span class="tag">Fusionsspleißen</span><h3>LWL-Spleißtechnik</h3><p>Dämpfungsarme Fusionsspleiße mit modernen Spleißgeräten, auch an hochfaserigen Kabeln mit Farbcodierung nach Norm.</p></article>
-        <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-house"/></svg></span><span class="tag">FTTH · FTTB</span><h3>Glasfaser-Hausanschlüsse</h3><p>Vom Hausanschlusspunkt bis zur Glasfaserdose in der Wohnung. Abgestimmt mit Eigentümern, Bauherren und Netzbetreibern.</p></article>
+        <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-house"/></svg></span><span class="tag">Gebäudeanbindung</span><h3>Glasfaser-Hausanschlüsse</h3><p>Vom Hausanschlusspunkt bis zur Glasfaserdose in der Wohnung. Abgestimmt mit Eigentümern, Bauherren und Netzbetreibern.</p></article>
         <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-blow"/></svg></span><span class="tag">Mikrorohr · Kabel</span><h3>Einblasen von Glasfaserkabeln</h3><p>Schonendes Einblasen in Mikrorohrverbände über lange Strecken. Schnell, materialschonend und wirtschaftlich.</p></article>
         <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-sleeve"/></svg></span><span class="tag">Spleißmuffen</span><h3>Muffenmontage</h3><p>Fachgerechte Montage und Abdichtung von Muffen im Schacht, am Mast und im Erdreich. Dicht, geschützt, dauerhaft.</p></article>
         <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-trace"/></svg></span><span class="tag">OTDR · Dämpfungsmessung</span><h3>Glasfasermessung und Dokumentation</h3><p>Messung jeder Faser und lückenlose Dokumentation mit Messprotokollen. Ihre Grundlage für Abnahme und Gewährleistung.</p></article>
         <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-net"/></svg></span><span class="tag">Passive Netze</span><h3>Netzwerkinfrastruktur</h3><p>Strukturierte Verkabelung und Glasfaseranbindung für Gewerbe, Rechenzentren und Liegenschaften. Skalierbar geplant.</p></article>
+        <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-hub"/></svg></span><span class="tag">Netzebene 3</span><h3>NE3 – Verteilnetz</h3><p>Aufbau und Erweiterung des Verteilnetzes: Kabel- und Muffenarbeiten zwischen Zentrale und Verteilerstandorten, gemessen und dokumentiert.</p></article>
+        <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-branch"/></svg></span><span class="tag">Netzebene 4</span><h3>NE4 – Anschlussnetz</h3><p>Anbindung der Gebäude vom Verteiler bis zum Hausanschlusspunkt, mit Einblasen, Spleißen und Messung aus einer Hand.</p></article>
+        <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-ftth"/></svg></span><span class="tag">Fiber to the Home</span><h3>FTTH-Ausbau</h3><p>Glasfaser bis in die Wohneinheit: von der Planung über Verteiler und Hausanschluss bis zur fertig montierten Glasfaserdose.</p></article>
+        <a class="card card-cta" href="#kontakt"><h3>Ihr Projekt ist nicht dabei?</h3><p>Sprechen Sie uns an. Wir finden die passende Lösung für Ihr Vorhaben.</p><span class="btn btn-primary">Projekt anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></span></a>
       </div>
     </div>
   </section>
@@ -358,7 +391,6 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
         <p class="lead" style="margin-bottom:22px">Wir sind ein spezialisierter Dienstleister für Glasfaser- und Telekommunikationsinfrastruktur.</p>
         <p>Unsere Monteure, Spleißer und Bauleiter bringen Jahre an Praxis aus Netzausbau und Gebäudeanbindung mit. Das hilft in der Planung, weil wir wissen, was auf der Baustelle möglich ist. Und es hilft in der Ausführung, weil jeder Handgriff sitzt.</p>
         <p>Wir arbeiten mit moderner Messtechnik und hochwertiger Ausrüstung, halten unsere Baustellen ordentlich und sprechen verständlich mit Auftraggebern, Behörden und Anwohnern. Sie haben einen festen Ansprechpartner, vom ersten Gespräch bis zur Abnahme.</p>
-        <p style="font:400 .8rem/1.5 var(--mono);color:var(--muted)">[PLATZHALTER: Gründungsjahr, Teamgröße, Zertifizierungen und Einsatzgebiet hier ergänzen]</p>
       </div>
       <div class="panel">
         <h3>Worauf Sie sich verlassen können</h3>
@@ -370,12 +402,6 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
           <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><div><b>Kundenorientierte Projektabwicklung</b><span>Ein Ansprechpartner, transparente Kommunikation.</span></div></li>
           <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><div><b>Qualitätsbewusstsein</b><span>Jede Faser gemessen, jedes Ergebnis dokumentiert.</span></div></li>
         </ul>
-        <div class="fcode" aria-label="Farbcode der zwölf Fasern">
-          <p>Faserfarbcode 1–12</p>
-          <div>
-            <i style="--c:#1E6FD9" title="1 Blau"></i><i style="--c:#F28C1E" title="2 Orange"></i><i style="--c:#2FA84F" title="3 Grün"></i><i style="--c:#8B5A2B" title="4 Braun"></i><i style="--c:#8A949E" title="5 Grau"></i><i style="--c:#F4F6F8" title="6 Weiß"></i><i style="--c:#D93636" title="7 Rot"></i><i style="--c:#10151B" title="8 Schwarz"></i><i style="--c:#F2D21E" title="9 Gelb"></i><i style="--c:#7B3FB5" title="10 Violett"></i><i style="--c:#EE82B4" title="11 Rosa"></i><i style="--c:#2CC4C9" title="12 Türkis"></i>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -402,11 +428,83 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
       <div class="sec-head">
         <div class="eyebrow">Projekte und Referenzen</div>
         <h2 id="p-h">Abgeschlossene Projekte im Überblick.</h2>
-        <p class="lead">Filtern Sie nach Leistung. Die Kacheln sind Platzhalter und lassen sich einzeln durch Projektfotos ersetzen.</p>
+        <p class="lead">Filtern Sie die Projekte nach Leistung.</p>
       </div>
       <div class="filters" role="group" aria-label="Projekte filtern" id="filters"></div>
       <div class="gallery" id="gallery"></div>
-      <p class="note">[PLATZHALTER: Illustrationen durch eigene Projektfotos ersetzen, Bildunterschrift = Projekt · Ort · Jahr]</p>
+      <div class="refs">
+        <h3 class="refs-h">Referenzen</h3>
+        <ul class="ref-list">
+          <li class="ref"><div class="ref-logo"><img src="data:image/webp;base64,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" alt="Logo FiberBase" width="431" height="220" loading="lazy"></div><div class="ref-meta"><b>FiberBase</b><small>Sulingen</small></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band dark" id="karriere" aria-labelledby="car-h">
+    <div class="wrap career">
+      <div>
+        <div class="eyebrow">Karriere</div>
+        <h2 id="car-h">Werden Sie Teil unseres Teams.</h2>
+        <p class="lead">Wir suchen Menschen, die sorgfältig arbeiten und den Glasfaserausbau mitgestalten wollen. Sehen Sie sich unsere Stellen an und bewerben Sie sich direkt hier.</p>
+        <div class="jobs">
+          <details class="job" open>
+            <summary>Glasfasermonteur (m/w/d)</summary>
+            <div class="job-body">
+              <h4>Ihre Aufgaben</h4>
+              <ul><li>Verlegen und Einblasen von Glasfaserkabeln</li><li>Montage von Verteilern, Muffen und Hausanschlüssen</li><li>Unterstützung bei Messung und Dokumentation</li></ul>
+              <h4>Ihr Profil</h4>
+              <ul><li>Technische Ausbildung oder Erfahrung im Netz-, Elektro- oder Kabelbau</li><li>Sorgfältige, selbstständige Arbeitsweise</li><li>Führerschein Klasse B</li></ul>
+              <h4>Wir bieten</h4>
+              <ul><li>Abwechslungsreiche Projekte im Glasfaserausbau</li><li>Einarbeitung durch erfahrene Kollegen</li><li>Moderne Ausrüstung und ein Team mit kurzen Wegen</li></ul>
+              <a class="btn btn-primary" href="#bewerbung" data-job="Glasfasermonteur (m/w/d)">Auf diese Stelle bewerben</a>
+            </div>
+          </details>
+          <details class="job">
+            <summary>Spleißer / LWL-Techniker (m/w/d)</summary>
+            <div class="job-body">
+              <h4>Ihre Aufgaben</h4>
+              <ul><li>Fusionsspleißen und Muffenmontage</li><li>Messung der Fasern, zum Beispiel mit OTDR</li><li>Erstellen der Messprotokolle und Dokumentation</li></ul>
+              <h4>Ihr Profil</h4>
+              <ul><li>Erfahrung im LWL-Spleißen oder die Bereitschaft, sich einzuarbeiten</li><li>Genauigkeit und Freude an technischer Präzision</li><li>Führerschein Klasse B</li></ul>
+              <h4>Wir bieten</h4>
+              <ul><li>Arbeit mit moderner Spleiß- und Messtechnik</li><li>Einarbeitung durch erfahrene Kollegen</li><li>Abwechslungsreiche Projekte im Glasfaserausbau</li></ul>
+              <a class="btn btn-primary" href="#bewerbung" data-job="Spleißer / LWL-Techniker (m/w/d)">Auf diese Stelle bewerben</a>
+            </div>
+          </details>
+          <div class="job job-plain">
+            <h3>Initiativbewerbung</h3>
+            <p>Keine passende Stelle dabei? Wir freuen uns über Ihre Initiativbewerbung.</p>
+            <a class="btn btn-ghost" href="#bewerbung" data-job="Initiativbewerbung">Initiativ bewerben</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card" id="bewerbung">
+        <h3>Jetzt bewerben</h3>
+        <p>Pflichtfelder sind mit * markiert.</p>
+        <form id="bform" novalidate>
+          <div class="field"><label for="b-stelle">Bewerbung als *</label>
+            <select id="b-stelle" name="stelle" required>
+              <option value="">Bitte wählen</option>
+              <option>Glasfasermonteur (m/w/d)</option>
+              <option>Spleißer / LWL-Techniker (m/w/d)</option>
+              <option>Initiativbewerbung</option>
+            </select>
+            <span class="err" id="e-b-stelle">Bitte wählen Sie eine Stelle.</span></div>
+          <div class="grid2">
+            <div class="field"><label for="b-name">Name *</label><input id="b-name" name="name" type="text" autocomplete="name" required><span class="err" id="e-b-name">Bitte geben Sie Ihren Namen ein.</span></div>
+            <div class="field"><label for="b-tel">Telefonnummer <i>(optional)</i></label><input id="b-tel" name="tel" type="tel" autocomplete="tel"><span class="err" id="e-b-tel">Bitte nutzen Sie nur Ziffern, Leerzeichen sowie + ( ) / -.</span></div>
+          </div>
+          <div class="field"><label for="b-mail">E-Mail-Adresse *</label><input id="b-mail" name="mail" type="email" autocomplete="email" required><span class="err" id="e-b-mail">Bitte geben Sie eine gültige E-Mail-Adresse ein.</span></div>
+          <div class="field"><label for="b-msg">Anschreiben <i>(optional)</i></label><textarea id="b-msg" name="msg" placeholder="Erzählen Sie uns kurz, was Sie mitbringen."></textarea></div>
+          <div class="field"><label for="b-files">Lebenslauf und Zeugnisse <i>(optional)</i></label><input id="b-files" name="unterlagen[]" type="file" accept=".pdf,.doc,.docx" multiple><span class="hint">PDF, DOC oder DOCX, bis zu 3 Dateien, zusammen höchstens 8 MB.</span><span class="err" id="e-b-files">Bitte wählen Sie bis zu 3 Dateien (PDF, DOC, DOCX) mit zusammen höchstens 8 MB.</span></div>
+          <div class="hp" aria-hidden="true"><label for="b-web">Website</label><input id="b-web" name="web" type="text" tabindex="-1" autocomplete="off"></div>
+          <div class="field" style="margin-bottom:0"><label class="check" for="b-dsgvo"><input id="b-dsgvo" name="dsgvo" type="checkbox" required><span>Ich habe die <a href="#" data-legal="datenschutz">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Bewerbungsdaten zur Durchführung des Bewerbungsverfahrens verarbeitet werden. *</span></label><span class="err" id="e-b-dsgvo">Bitte stimmen Sie der Datenverarbeitung zu.</span></div>
+          <button class="btn btn-primary" type="submit" id="b-submit">Bewerbung senden <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></button>
+          <div class="status" id="b-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -475,8 +573,8 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
           <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.2-3.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg></a>
         </div>
       </div>
-      <div><h4>Navigation</h4><ul><li><a href="#top">Start</a></li><li><a href="#ueber-uns">Über uns</a></li><li><a href="#warum-wir">Warum wir</a></li><li><a href="#projekte">Projekte</a></li><li><a href="#kontakt">Kontakt</a></li></ul></div>
-      <div><h4>Leistungen</h4><ul><li><a href="#leistungen">Glasfasermontage</a></li><li><a href="#leistungen">Kabelverlegung &amp; Einblasen</a></li><li><a href="#leistungen">LWL-Spleißtechnik &amp; Muffen</a></li><li><a href="#leistungen">Hausanschlüsse</a></li><li><a href="#leistungen">Messung &amp; Dokumentation</a></li></ul></div>
+      <div><h4>Navigation</h4><ul><li><a href="#top">Start</a></li><li><a href="#ueber-uns">Über uns</a></li><li><a href="#warum-wir">Warum wir</a></li><li><a href="#projekte">Projekte</a></li><li><a href="#karriere">Karriere</a></li><li><a href="#kontakt">Kontakt</a></li></ul></div>
+      <div><h4>Leistungen</h4><ul><li><a href="#leistungen">Glasfasermontage</a></li><li><a href="#leistungen">Kabelverlegung &amp; Einblasen</a></li><li><a href="#leistungen">LWL-Spleißtechnik &amp; Muffen</a></li><li><a href="#leistungen">Hausanschlüsse &amp; FTTH</a></li><li><a href="#leistungen">NE3 &amp; NE4</a></li><li><a href="#leistungen">Messung &amp; Dokumentation</a></li></ul></div>
       <div><h4>Kontakt</h4><ul><li><a href="tel:+4917641945276">0176 41945276</a></li><li><a href="mailto:info@tecnexis.de">info@tecnexis.de</a></li><li style="color:var(--on-dark-muted)">Alter Stadtweg 7a<br>38110 Braunschweig</li></ul></div>
     </div>
     <div class="foot-bottom">
@@ -508,18 +606,15 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
 
 <template id="t-impressum">
   <h2 id="legal-t">Impressum</h2>
-  <p>[PLATZHALTER: Angaben gemäß § 5 DDG durch die tatsächlichen Firmendaten ersetzen.]</p>
-  <h3>Anbieter</h3><p>TecNexis [Rechtsform ergänzen]<br>Alter Stadtweg 7a<br>38110 Braunschweig</p>
-  <h3>Vertreten durch</h3><p>[Name der Geschäftsführung]</p>
+  <h3>Anbieter</h3><p>TecNexis<br>Alter Stadtweg 7a<br>38110 Braunschweig</p>
   <h3>Kontakt</h3><p>Telefon: 0176 41945276<br>E-Mail: info@tecnexis.de</p>
-  <h3>Registereintrag</h3><p>Handelsregister: [Amtsgericht], HRB [Nummer]<br>Umsatzsteuer-ID: [DE000000000]</p>
 </template>
 <template id="t-datenschutz">
   <h2 id="legal-t">Datenschutzerklärung</h2>
-  <p>[PLATZHALTER: Diese Vorlage ersetzt keine Rechtsberatung. Bitte vor Veröffentlichung rechtlich prüfen lassen.]</p>
   <h3>Verantwortlicher</h3><p>TecNexis, Alter Stadtweg 7a, 38110 Braunschweig, info@tecnexis.de</p>
   <h3>Kontaktformular</h3><p>Wir verarbeiten Name, E-Mail-Adresse, optionale Angaben und Ihre Nachricht ausschließlich zur Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. b und f DSGVO).</p>
   <h3>Externe Dienste</h3><p>Karten oder andere Drittdienste werden erst nach Ihrer ausdrücklichen Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) geöffnet. Sie können diese jederzeit über die Cookie-Einstellungen widerrufen.</p>
+  <h3>Bewerbungen</h3><p>Ihre Bewerbungsdaten verwenden wir ausschließlich für das Bewerbungsverfahren (Art. 6 Abs. 1 lit. b DSGVO, § 26 BDSG). Sie gelangen per E-Mail an die für die Auswahl zuständigen Personen und werden nach Abschluss des Verfahrens gelöscht, sofern Sie nicht in eine längere Speicherung eingewilligt haben.</p>
   <h3>Ihre Rechte</h3><p>Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch sowie Beschwerde bei einer Aufsichtsbehörde.</p>
 </template>
 
@@ -560,25 +655,21 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
   if(reduce){draw(2)}else{requestAnimationFrame(loop)}
   window.addEventListener('resize',function(){size();seed();if(reduce)draw(2)});
 
-  /* Galerie (generierte Platzhalter-Illustrationen) */
-  var CATS=['Glasfasermontage','Tiefbau','Spleißarbeiten','Hausanschlüsse','Netzwerkinfrastruktur'];
+  /* Galerie (generierte Illustrationen) */
+  var CATS=['Glasfasermontage','Spleißarbeiten','Hausanschlüsse','Netzwerkinfrastruktur'];
   function art(type,v,id){
     var c=v%2?['#0A2342','#123560']:['#061427','#0F3A63'];
-    var o='<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Platzhalter-Illustration: '+CATS[type]+'"><defs><linearGradient id="g'+id+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+c[0]+'"/><stop offset="1" stop-color="'+c[1]+'"/></linearGradient><radialGradient id="r'+id+'"><stop offset="0" stop-color="#4FE3F2" stop-opacity=".9"/><stop offset="1" stop-color="#4FE3F2" stop-opacity="0"/></radialGradient></defs><rect width="400" height="300" fill="url(#g'+id+')"/>';
+    var o='<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration: '+CATS[type]+'"><defs><linearGradient id="g'+id+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+c[0]+'"/><stop offset="1" stop-color="'+c[1]+'"/></linearGradient><radialGradient id="r'+id+'"><stop offset="0" stop-color="#4FE3F2" stop-opacity=".9"/><stop offset="1" stop-color="#4FE3F2" stop-opacity="0"/></radialGradient></defs><rect width="400" height="300" fill="url(#g'+id+')"/>';
     var k,j;
     if(type===0){
       for(k=0;k<3;k++){var y=60+k*62;o+='<rect x="50" y="'+y+'" width="300" height="46" rx="6" fill="#0C2D52" stroke="#1D4573"/>';
         for(j=0;j<12;j++){o+='<rect x="'+(66+j*23)+'" y="'+(y+10)+'" width="14" height="16" rx="3" fill="#061427" stroke="#2A6BA0"/>';if((j+k+v)%3!==0)o+='<circle cx="'+(73+j*23)+'" cy="'+(y+37)+'" r="2.4" fill="#4FE3F2"/>'}}
       o+='<path d="M89 118C89 150 140 150 140 180M181 118C181 160 250 150 250 242M273 56C330 80 330 150 296 180" fill="none" stroke="#19C3D6" stroke-width="2.5" opacity=".85"/>';
     }else if(type===1){
-      o+='<rect y="90" width="400" height="210" fill="#0B2A4B"/><rect y="150" width="400" height="150" fill="#0A2342"/><rect y="215" width="400" height="85" fill="#08203A"/>';
-      o+='<path d="M120 90L140 250H260L280 90z" fill="#050F1D"/><path d="M0 90H400" stroke="#4FE3F2" stroke-width="2" stroke-dasharray="10 8"/>';
-      var n=3+v%3;for(k=0;k<n;k++){o+='<circle cx="'+(165+k*34)+'" cy="'+(228-(k%2)*26)+'" r="13" fill="#0C2D52" stroke="#19C3D6" stroke-width="2.5"/><circle cx="'+(165+k*34)+'" cy="'+(228-(k%2)*26)+'" r="4" fill="#4FE3F2"/>'}
-    }else if(type===2){
       o+='<circle cx="200" cy="140" r="70" fill="url(#r'+id+')"/><path d="M20 140H182" stroke="#8FD9E6" stroke-width="7" stroke-linecap="round"/><path d="M218 140H380" stroke="#8FD9E6" stroke-width="7" stroke-linecap="round"/><path d="M182 140H218" stroke="#fff" stroke-width="5"/>';
       o+='<g stroke="#4FE3F2" stroke-width="2" stroke-linecap="round"><path d="M200 100v-22M200 180v22M170 110l-14-14M230 170l14 14M230 110l14-14M170 170l-14 14"/></g>';
       o+='<circle cx="'+(90+v*20)+'" cy="236" r="34" fill="#0C2D52" stroke="#2A6BA0" stroke-width="2"/><circle cx="'+(90+v*20)+'" cy="236" r="12" fill="#4FE3F2"/>';
-    }else if(type===3){
+    }else if(type===2){
       o+='<path d="M0 240H400" stroke="#1D4573" stroke-width="2"/><path d="M250 240V150L330 100L400 150V240z" fill="#0C2D52" stroke="#2A6BA0" stroke-width="2" transform="translate(-30 0)"/><rect x="302" y="190" width="26" height="50" fill="#061427"/><rect x="250" y="160" width="26" height="26" fill="#19C3D6" opacity=".35"/>';
       o+='<path d="M0 262C90 262 140 226 200 226S270 222 300 214" fill="none" stroke="#19C3D6" stroke-width="3"/><circle cx="'+(90+v*30)+'" cy="258" r="6" fill="#4FE3F2"/><circle cx="'+(90+v*30)+'" cy="258" r="18" fill="url(#r'+id+')"/>';
     }else{
@@ -588,10 +679,10 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
     }
     return o+'</svg>';
   }
-  var ITEMS=[[0,0],[1,0],[2,0],[3,0],[4,0],[1,1],[0,1],[3,1],[2,1]].map(function(a,i){return {t:a[0],v:a[1],i:i}});
+  var ITEMS=[[0,0],[1,0],[2,0],[3,0],[0,1],[1,1],[2,1],[3,1],[2,2]].map(function(a,i){return {t:a[0],v:a[1],i:i}});
   var gal=$('#gallery'),fl=$('#filters'),cur='Alle';
   ['Alle'].concat(CATS).forEach(function(c){var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=c;b.setAttribute('aria-pressed',c==='Alle');b.addEventListener('click',function(){cur=c;$$('.chip',fl).forEach(function(x){x.setAttribute('aria-pressed',x===b)});render()});fl.appendChild(b)});
-  function render(){gal.innerHTML='';ITEMS.forEach(function(it){if(cur!=='Alle'&&CATS[it.t]!==cur)return;var f=document.createElement('figure');f.className='shot';f.innerHTML=art(it.t,it.v,it.i)+'<figcaption><small>'+CATS[it.t]+'</small><span>Projektname · Ort · Jahr</span></figcaption>';gal.appendChild(f)})}
+  function render(){gal.innerHTML='';ITEMS.forEach(function(it){if(cur!=='Alle'&&CATS[it.t]!==cur)return;var f=document.createElement('figure');f.className='shot';f.innerHTML=art(it.t,it.v,it.i)+'<figcaption><span>'+CATS[it.t]+'</span></figcaption>';gal.appendChild(f)})}
   render();
 
   /* Kontaktformular */
@@ -663,5 +754,50 @@ h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
   $('#legal-close').addEventListener('click',closeLegal);
   legal.addEventListener('click',function(e){if(e.target===legal)closeLegal()});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!legal.hidden)closeLegal()});
+
+  /* Bewerbung */
+  var bform=$('#bform'),bstatus=$('#b-status'),APPLY_ENDPOINT='bewerbung.php';
+  $$('[data-job]').forEach(function(a){a.addEventListener('click',function(){$('#b-stelle').value=a.getAttribute('data-job')})});
+  function checkB(){
+    var bad=false,files=$('#b-files').files,tot=0,badf=files.length>3,i,ext,t=$('#b-tel').value.trim();
+    bad=setErr('b-stelle',!$('#b-stelle').value)||bad;
+    bad=setErr('b-name',$('#b-name').value.trim().length<2)||bad;
+    bad=setErr('b-mail',!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test($('#b-mail').value.trim()))||bad;
+    bad=setErr('b-tel',t!==''&&!/^[+()\d\s\/-]{6,}$/.test(t))||bad;
+    for(i=0;i<files.length;i++){ext=files[i].name.split('.').pop().toLowerCase();tot+=files[i].size;if(['pdf','doc','docx'].indexOf(ext)<0)badf=true}
+    if(tot>8*1024*1024)badf=true;
+    bad=setErr('b-files',badf)||bad;
+    bad=setErr('b-dsgvo',!$('#b-dsgvo').checked)||bad;
+    return !bad;
+  }
+  function bMailto(){
+    var b='Stelle: '+$('#b-stelle').value+'\nName: '+$('#b-name').value.trim()+'\nE-Mail: '+$('#b-mail').value.trim()+'\nTelefon: '+$('#b-tel').value.trim()+'\n\n'+$('#b-msg').value.trim();
+    return 'mailto:'+MAIL_TO+'?subject='+encodeURIComponent('Bewerbung: '+$('#b-stelle').value)+'&body='+encodeURIComponent(b);
+  }
+  function sayB(title,text,withMail){
+    bstatus.textContent='';
+    var b=document.createElement('b');b.textContent=title;bstatus.appendChild(b);
+    bstatus.appendChild(document.createTextNode(' '+text));
+    if(withMail){
+      var a=document.createElement('a');a.className='btn btn-dark';a.href=bMailto();a.textContent='E-Mail-Programm öffnen';bstatus.appendChild(a);
+      var s=document.createElement('small');s.textContent='Bitte hängen Sie Ihre Unterlagen dort an. Oder schreiben Sie direkt an '+MAIL_TO+'.';bstatus.appendChild(s);
+    }
+    bstatus.classList.add('show');
+  }
+  bform.addEventListener('submit',function(e){
+    e.preventDefault();bstatus.classList.remove('show');
+    if($('#b-web').value){return}
+    if(!checkB()){var first=$('.field.invalid input, .field.invalid select, .field.invalid textarea',bform);if(first)first.focus();return}
+    var btn=$('#b-submit');btn.disabled=true;
+    fetch(APPLY_ENDPOINT,{method:'POST',body:new FormData(bform),headers:{'Accept':'application/json'}})
+      .then(function(r){return r.json().then(function(j){return r.ok&&j&&j.ok})})
+      .then(function(ok){
+        if(!ok){throw new Error('send')}
+        sayB('Vielen Dank für Ihre Bewerbung.','Wir prüfen Ihre Unterlagen und melden uns bei Ihnen.',false);
+        bform.reset();
+      })
+      .catch(function(){sayB('Die Bewerbung konnte nicht automatisch gesendet werden.','Bitte senden Sie sie über Ihr E-Mail-Programm. Ihre Angaben sind bereits vorbereitet.',true)})
+      .then(function(){btn.disabled=false});
+  });
 })();
 </script>
