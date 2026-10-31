@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>TecNexis Fiber Connect</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="TecNexis Fiber Connect: Glasfasermontage, LWL-Spleißtechnik, Kabelverlegung, Hausanschlüsse und Netzwerkinfrastruktur aus einer Hand. Jetzt Projekt anfragen.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TecNexis Fiber Connect – Wir verbinden die Zukunft.">
+<meta property="og:description" content="Professionelle Glasfasertechnik, moderne Netzwerkinfrastruktur und leistungsstarke Kommunikationslösungen.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"TecNexis","description":"Glasfasermontage, LWL-Spleißtechnik, Kabelverlegung, Hausanschlüsse und Netzwerkinfrastruktur.","telephone":"+49 176 41945276","email":"info@tecnexis.de","address":{"@type":"PostalAddress","streetAddress":"Alter Stadtweg 7a","postalCode":"38110","addressLocality":"Braunschweig","addressCountry":"DE"}}
+</script>
+<style>
+/* Layout concept: dunkler Hero mit lebendem Faser-Canvas, danach abwechselnd helle und dunkle Bänder.
+   Technische Kennwerte (nm, G.652.D, OTDR) in Mono tragen die Fachkompetenz.
+   PLATZHALTER ersetzen: "TecNexis", "info@tecnexis.de", "+49 176 41945276", "Alter Stadtweg 7a, 38110 Braunschweig". */
+:root{
+  --navy-900:#061427; --navy-800:#0A2342; --navy-700:#123560; --cyan:#19C3D6; --cyan-bright:#4FE3F2;
+  --on-dark:#EAF4FB; --on-dark-muted:#A9BFD3; --line-dark:rgba(255,255,255,.12);
+  --bg:#FFFFFF; --bg-alt:#F1F5F9; --fg:#0A2342; --muted:#46596F; --line:#D8E1EA; --card:#FFFFFF; --accent-text:#0A7585; --field:#FFFFFF;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Instrument Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#07182E;--bg-alt:#0A2342;--fg:#E6EFF7;--muted:#A3B6CA;--line:#1D3A5E;--card:#0D2848;--accent-text:#4FE3F2;--field:#081D36;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#07182E;--bg-alt:#0A2342;--fg:#E6EFF7;--muted:#A3B6CA;--line:#1D3A5E;--card:#0D2848;--accent-text:#4FE3F2;--field:#081D36;color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--navy-900)}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;text-wrap:balance;letter-spacing:-.02em}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(64px,9vw,120px)}
+.band.alt{background:var(--bg-alt)}
+.band.dark{background:var(--navy-800);color:var(--on-dark)}
+.eyebrow{font:500 .75rem/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent-text);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--cyan)}
+.dark .eyebrow{color:var(--cyan-bright)}
+h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700}
+.lead{font-size:clamp(1.05rem,1.6vw,1.2rem);color:var(--muted);max-width:60ch;margin-top:18px}
+.dark .lead{color:var(--on-dark-muted)}
+.sec-head{margin-bottom:clamp(36px,5vw,64px);max-width:760px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:600 1rem/1 var(--body);text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s}
+.btn svg{width:18px;height:18px;transition:transform .2s}
+.btn-primary{background:var(--cyan);color:var(--navy-900)}
+.btn-primary:hover{background:var(--cyan-bright);box-shadow:0 8px 30px rgba(25,195,214,.35);transform:translateY(-2px)}
+.btn-primary:hover svg{transform:translateX(4px)}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff;background:transparent}
+.btn-ghost:hover{border-color:var(--cyan-bright);background:rgba(79,227,242,.08)}
+.btn-dark{background:var(--navy-800);color:#fff}
+.btn-dark:hover{background:var(--navy-700)}
+
+/* Header */
+.site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(6,20,39,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-dark);color:#fff}
+.head-in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.logo svg{width:38px;height:38px;flex:none}
+.logo b{display:block;font:800 1.15rem/1 var(--display);letter-spacing:.06em}
+.logo small{display:block;font:500 .66rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-muted);margin-top:5px}
+.nav{display:flex;align-items:center;gap:6px}
+.nav a{color:var(--on-dark);text-decoration:none;font-weight:500;font-size:.95rem;padding:10px 14px;border-radius:999px;transition:background .2s,color .2s}
+.nav a:hover{background:rgba(255,255,255,.08);color:var(--cyan-bright)}
+.nav .btn{min-height:44px;padding:0 20px;margin-left:8px;color:var(--navy-900)}
+.nav .btn:hover{background:var(--cyan-bright);color:var(--navy-900)}
+.burger{display:none;width:46px;height:46px;border-radius:12px;border:1px solid var(--line-dark);background:transparent;color:#fff;cursor:pointer}
+.burger svg{width:22px;height:22px}
+@media (max-width:900px){
+  .burger{display:inline-flex;align-items:center;justify-content:center}
+  .nav{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;background:var(--navy-900);padding:12px max(16px,env(safe-area-inset-right,0px)) 20px max(16px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line-dark);display:none}
+  .nav.open{display:flex}
+  .nav a{padding:14px 12px}
+  .nav .btn{margin:8px 0 0}
+}
+
+/* Hero */
+.hero{position:relative;background:var(--navy-900);color:var(--on-dark);overflow:hidden;isolation:isolate}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,20,39,.92) 0%,rgba(6,20,39,.7) 45%,rgba(6,20,39,.1) 100%),linear-gradient(0deg,var(--navy-900) 0%,transparent 28%)}
+.hero-in{padding-block:clamp(72px,12vw,150px) clamp(64px,9vw,110px)}
+.hero h1{font-size:clamp(2.6rem,7.4vw,5.6rem);font-weight:800;max-width:13ch;letter-spacing:-.035em}
+.hero h1 em{font-style:normal;color:var(--cyan-bright)}
+.hero .sub{font-size:clamp(1.05rem,1.8vw,1.3rem);color:var(--on-dark-muted);max-width:56ch;margin-top:26px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.spec{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:clamp(40px,7vw,80px);padding-top:22px;border-top:1px solid var(--line-dark);font:400 .78rem/1.4 var(--mono);color:var(--on-dark-muted);letter-spacing:.04em}
+.spec b{color:var(--cyan-bright);font-weight:500}
+
+/* Intro */
+.intro{display:grid;gap:clamp(32px,6vw,80px);grid-template-columns:1fr}
+@media (min-width:900px){.intro{grid-template-columns:1.05fr 1fr;align-items:start}}
+.pillars{display:grid;gap:18px;grid-template-columns:1fr}
+@media (min-width:560px){.pillars{grid-template-columns:1fr 1fr}}
+.pillar{padding:22px 22px 24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);min-width:0}
+.pillar h3{font-size:1.15rem;margin:14px 0 8px}
+.pillar p{color:var(--muted);font-size:.95rem}
+.ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:rgba(25,195,214,.12);color:var(--accent-text);transition:background .25s,color .25s}
+.ico svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* Leistungen */
+.cards{display:grid;gap:20px;grid-template-columns:1fr}
+@media (min-width:640px){.cards{grid-template-columns:1fr 1fr}}
+@media (min-width:1100px){.cards{grid-template-columns:repeat(4,1fr)}}
+.card{position:relative;display:flex;flex-direction:column;gap:12px;padding:28px 26px 30px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);min-width:0;transition:transform .3s,border-color .3s,box-shadow .3s;overflow:hidden}
+.card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--cyan),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.card:hover{transform:translateY(-5px);border-color:var(--cyan);box-shadow:0 18px 40px -18px rgba(10,35,66,.35)}
+.card:hover::after{transform:scaleX(1)}
+.card:hover .ico{background:var(--cyan);color:var(--navy-900)}
+.card .tag{font:500 .7rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent-text)}
+.card h3{font-size:1.28rem}
+.card p{color:var(--muted);font-size:.97rem}
+
+/* Über uns */
+.about{display:grid;gap:clamp(32px,6vw,80px);grid-template-columns:1fr}
+@media (min-width:900px){.about{grid-template-columns:1fr 1fr;align-items:center}}
+.about-text p+p{margin-top:16px}
+.about-text p{color:var(--muted)}
+.panel{background:var(--navy-800);color:var(--on-dark);border-radius:20px;padding:clamp(24px,4vw,40px);min-width:0;position:relative;overflow:hidden}
+.panel::before{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(25,195,214,.35),transparent 70%)}
+.panel h3{font-size:1.2rem;position:relative}
+.traits{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:14px;position:relative}
+.traits li{display:flex;gap:14px;align-items:flex-start}
+.traits svg{flex:none;width:22px;height:22px;margin-top:2px;stroke:var(--cyan-bright);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.traits b{display:block;font-weight:600}
+.traits span{color:var(--on-dark-muted);font-size:.93rem}
+.fcode{margin-top:28px;padding-top:22px;border-top:1px solid var(--line-dark);position:relative}
+.fcode p{font:400 .72rem/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-muted);margin-bottom:12px}
+.fcode div{display:grid;grid-template-columns:repeat(12,1fr);gap:4px}
+.fcode i{height:10px;border-radius:5px;background:var(--c);box-shadow:0 0 0 1px rgba(255,255,255,.18) inset;transition:transform .25s}
+.fcode i:hover{transform:scaleY(2)}
+
+/* Warum wir */
+.why{display:grid;gap:20px;grid-template-columns:1fr}
+@media (min-width:640px){.why{grid-template-columns:1fr 1fr}}
+@media (min-width:980px){.why{grid-template-columns:repeat(3,1fr)}}
+.why-item{padding:30px 26px;border:1px solid var(--line-dark);border-radius:var(--radius);background:rgba(255,255,255,.03);min-width:0;transition:background .3s,border-color .3s,transform .3s}
+.why-item:hover{background:rgba(25,195,214,.08);border-color:rgba(79,227,242,.5);transform:translateY(-4px)}
+.why-item .ico{background:rgba(79,227,242,.14);color:var(--cyan-bright);width:54px;height:54px}
+.why-item h3{font-size:1.25rem;margin:20px 0 10px;color:#fff}
+.why-item p{color:var(--on-dark-muted);font-size:.97rem}
+
+/* Galerie */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.chip{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);font:500 .9rem/1 var(--body);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.chip:hover{border-color:var(--cyan)}
+.chip[aria-pressed="true"]{background:var(--navy-800);color:#fff;border-color:var(--navy-800)}
+.gallery{display:grid;gap:16px;grid-template-columns:1fr}
+@media (min-width:560px){.gallery{grid-template-columns:1fr 1fr}}
+@media (min-width:980px){.gallery{grid-template-columns:repeat(3,1fr)}}
+.shot{position:relative;margin:0;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;max-width:100%;background:var(--navy-800);min-width:0}
+.shot svg{width:100%;height:100%;display:block;transition:transform .6s}
+.shot:hover svg{transform:scale(1.06)}
+.shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;background:linear-gradient(0deg,rgba(6,20,39,.92),transparent);color:#fff;transform:translateY(8px);opacity:.92;transition:transform .3s,opacity .3s}
+.shot:hover figcaption{transform:none;opacity:1}
+.shot figcaption small{display:block;font:500 .68rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--cyan-bright);margin-bottom:6px}
+.shot figcaption span{font-weight:600}
+.shot[hidden]{display:none}
+.note{margin-top:22px;font:400 .8rem/1.5 var(--mono);color:var(--muted)}
+
+/* Kontakt */
+.contact{display:grid;gap:clamp(32px,6vw,72px);grid-template-columns:1fr}
+@media (min-width:960px){.contact{grid-template-columns:.9fr 1.1fr;align-items:start}}
+.contact h2{margin-bottom:18px}
+.cinfo{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:18px}
+.cinfo li{display:flex;gap:16px;align-items:flex-start;min-width:0}
+.cinfo .ico{flex:none}
+.cinfo small{display:block;font:500 .7rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.cinfo a{font-weight:600;font-size:1.1rem;text-decoration:none;overflow-wrap:anywhere}
+.cinfo a:hover{color:var(--accent-text)}
+.cinfo address{font-style:normal;font-weight:500}
+.map{margin-top:30px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.map svg{display:block;width:100%;height:auto;max-height:200px}
+.map-body{padding:16px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.map-body p{font-size:.85rem;color:var(--muted);flex:1 1 220px}
+.map-body .btn{min-height:44px;padding:0 20px;font-size:.92rem}
+.form-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,4vw,40px);min-width:0;box-shadow:0 30px 60px -40px rgba(10,35,66,.4)}
+.form-card h3{font-size:1.4rem;margin-bottom:6px}
+.form-card>p{color:var(--muted);font-size:.95rem;margin-bottom:24px}
+.grid2{display:grid;gap:16px;grid-template-columns:1fr}
+@media (min-width:600px){.grid2{grid-template-columns:1fr 1fr}}
+.field{display:flex;flex-direction:column;gap:7px;min-width:0;margin-bottom:16px}
+.field label{font-weight:600;font-size:.88rem}
+.field label i{font-style:normal;color:var(--muted);font-weight:400}
+.field input,.field textarea{width:100%;min-height:50px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--field);color:var(--fg);font:400 1rem/1.4 var(--body);transition:border-color .2s,box-shadow .2s}
+.field textarea{min-height:140px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 4px rgba(25,195,214,.2)}
+.field .err{display:none;color:#C23A3A;font-size:.85rem;font-weight:500}
+:root[data-theme="dark"] .field .err{color:#FF8F8F}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .field .err{color:#FF8F8F}}
+.field.invalid input,.field.invalid textarea{border-color:#C23A3A}
+.field.invalid .err{display:block}
+.check{display:flex;gap:12px;align-items:flex-start;font-size:.88rem;color:var(--muted);margin-bottom:6px}
+.check input{width:22px;height:22px;flex:none;margin:1px 0 0;accent-color:var(--cyan)}
+.check a{color:var(--accent-text);font-weight:600}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-card .btn{width:100%;margin-top:18px}
+.status{display:none;margin-top:18px;padding:16px 18px;border-radius:12px;background:rgba(25,195,214,.12);border:1px solid var(--cyan);font-size:.95rem}
+.status.show{display:block}
+.status small{display:block;margin-top:8px;font:400 .75rem/1.5 var(--mono);color:var(--muted)}
+
+/* Footer */
+.site-foot{background:var(--navy-900);color:var(--on-dark);padding-top:clamp(56px,8vw,96px);padding-bottom:calc(28px + env(safe-area-inset-bottom,0px))}
+.foot-grid{display:grid;gap:40px;grid-template-columns:1fr}
+@media (min-width:640px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:980px){.foot-grid{grid-template-columns:1.5fr 1fr 1.2fr 1.2fr}}
+.foot-grid>*{min-width:0}
+.foot-grid h4{font:500 .75rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--cyan-bright);margin:0 0 18px}
+.foot-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.foot-grid a{color:var(--on-dark);text-decoration:none;opacity:.85;transition:opacity .2s,color .2s}
+.foot-grid a:hover{opacity:1;color:var(--cyan-bright)}
+.foot-grid p{color:var(--on-dark-muted);font-size:.95rem;margin-top:18px;max-width:38ch}
+.social{display:flex;gap:10px;margin-top:22px}
+.social a{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-dark);display:grid;place-items:center;opacity:1}
+.social a:hover{border-color:var(--cyan-bright);background:rgba(79,227,242,.1)}
+.social svg{width:19px;height:19px;fill:currentColor}
+.foot-bottom{margin-top:56px;padding-top:22px;border-top:1px solid var(--line-dark);display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:.85rem;color:var(--on-dark-muted)}
+.foot-bottom div{display:flex;flex-wrap:wrap;gap:6px 22px}
+.linkbtn{background:none;border:0;padding:6px 0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.linkbtn:hover{color:var(--cyan-bright)}
+
+/* Cookie + Legal */
+.cookie{position:fixed;left:0;right:0;bottom:0;z-index:70;padding:16px max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.cookie-in{max-width:760px;margin:0 auto;background:var(--navy-800);color:var(--on-dark);border:1px solid rgba(79,227,242,.35);border-radius:18px;padding:22px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.cookie h3{font-size:1.1rem;margin-bottom:8px}
+.cookie p{font-size:.9rem;color:var(--on-dark-muted)}
+.cookie p a{color:var(--cyan-bright)}
+.cookie-opt{display:flex;gap:12px;align-items:flex-start;margin-top:14px;font-size:.88rem}
+.cookie-opt input{width:20px;height:20px;accent-color:var(--cyan);margin-top:2px;flex:none}
+.cookie-opt span{color:var(--on-dark-muted)}
+.cookie-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.cookie-btns .btn{min-height:46px;padding:0 20px;font-size:.93rem;flex:1 1 150px}
+.legal{position:fixed;inset:0;z-index:80;background:rgba(3,10,20,.75);display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.legal[hidden]{display:none}
+.legal-box{background:var(--bg);color:var(--fg);width:100%;max-width:760px;border-radius:18px;padding:clamp(22px,4vw,44px);margin-block:auto}
+.legal-box h2{font-size:1.8rem;margin-bottom:18px}
+.legal-box h3{font-size:1.05rem;margin:22px 0 6px}
+.legal-box p{color:var(--muted);font-size:.95rem}
+.legal-box .btn{margin-top:26px;min-height:46px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 3v5M15 3v5M7 8h10v4a5 5 0 0 1-10 0V8zM12 17v4"/></symbol>
+    <symbol id="i-reel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/><path d="M20 12h2M12 4V2"/></symbol>
+    <symbol id="i-splice" viewBox="0 0 24 24"><path d="M2 12h8M14 12h8M12 5v2M12 17v2M8.5 8.5l1.4 1.4M14.1 14.1l1.4 1.4M15.5 8.5l-1.4 1.4M9.9 14.1l-1.4 1.4"/></symbol>
+    <symbol id="i-house" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-5h4v5"/></symbol>
+    <symbol id="i-blow" viewBox="0 0 24 24"><path d="M3 8h18M3 16h18M6 12h9M12 9l3 3-3 3"/></symbol>
+    <symbol id="i-sleeve" viewBox="0 0 24 24"><path d="M5 8h14v8H5zM2 12h3M19 12h3M9 8v8M15 8v8"/></symbol>
+    <symbol id="i-trace" viewBox="0 0 24 24"><path d="M3 3v18h18M6 9h4l2 6h3l2 3h3"/></symbol>
+    <symbol id="i-net" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v5M12 12l-6 5M12 12l6 5"/></symbol>
+    <symbol id="i-trench" viewBox="0 0 24 24"><path d="M3 6h18M3 6l3 12h12l3-12M9 12h6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 1v4M12 19v4M1 12h4M19 12h4"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5zM6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-flex" viewBox="0 0 24 24"><path d="M4 7h10M4 12h16M4 17h10"/><circle cx="17" cy="7" r="2"/><circle cx="17" cy="17" r="2"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="logo" href="#top" aria-label="TecNexis Fiber Connect, zur Startseite">
+      <!-- LOGO-PLATZHALTER: durch eigenes Logo (SVG) ersetzen -->
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2l16 9v18l-16 9L4 29V11z" fill="none" stroke="#19C3D6" stroke-width="2"/><path d="M9 25c6 0 8-10 11-10s5 10 11 10" fill="none" stroke="#4FE3F2" stroke-width="2.2" stroke-linecap="round"/><circle cx="20" cy="15" r="2.2" fill="#fff"/></svg>
+      <span><b>TecNexis</b><small>Fiber Connect</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ueber-uns">Über uns</a>
+      <a href="#warum-wir">Warum wir</a>
+      <a href="#projekte">Projekte</a>
+      <a class="btn btn-primary" href="#kontakt">Projekt anfragen</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="h1">
+    <canvas id="fibers" aria-hidden="true"></canvas>
+    <div class="wrap hero-in">
+      <div class="eyebrow" style="color:var(--cyan-bright)">Glasfaser · Netzbau · Telekommunikation</div>
+      <h1 id="h1">Wir verbinden die <em>Zukunft.</em></h1>
+      <p class="sub">Ihr zuverlässiger Partner für professionelle Glasfasertechnik, moderne Netzwerkinfrastruktur und leistungsstarke Kommunikationslösungen.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#kontakt">Jetzt Projekt anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="#leistungen">Unsere Leistungen entdecken</a>
+      </div>
+      <div class="spec" aria-label="Technische Eckdaten">
+        <span>Einmodenfaser <b>G.652.D</b></span>
+        <span>Wellenlängen <b>1310 / 1550 nm</b></span>
+        <span>Prüfverfahren <b>OTDR · Einfügedämpfung</b></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="intro-h">
+    <div class="wrap intro">
+      <div>
+        <div class="eyebrow">Das Unternehmen</div>
+        <h2 id="intro-h">Glasfaser, die einfach funktioniert. Von der Trasse bis zur Dose.</h2>
+        <p class="lead">Wir planen, verlegen, spleißen und messen. Für Netzbetreiber, Bauunternehmen, Telekommunikationsfirmen und private Auftraggeber. Jedes Projekt führen wir mit dem gleichen Anspruch: sauber ausgeführt, nachvollziehbar dokumentiert und pünktlich übergeben.</p>
+        <div class="cta-row"><a class="btn btn-dark" href="#ueber-uns">Mehr über uns</a></div>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-shield"/></svg></span><h3>Qualität</h3><p>Geprüfte Materialien und Verfahren, die jeder Messung standhalten.</p></div>
+        <div class="pillar"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg></span><h3>Zuverlässigkeit</h3><p>Zugesagte Termine halten wir ein. Auf Baustellen und im Büro.</p></div>
+        <div class="pillar"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-target"/></svg></span><h3>Präzision</h3><p>Spleiße, Biegeradien und Zugkräfte im vorgegebenen Toleranzbereich.</p></div>
+        <div class="pillar"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-cap"/></svg></span><h3>Fachkompetenz</h3><p>Geschulte Monteure und Spleißer mit Erfahrung in der Netztechnik.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" id="leistungen" aria-labelledby="l-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Unsere Leistungen</div>
+        <h2 id="l-h">Alles, was ein Glasfasernetz braucht.</h2>
+        <p class="lead">Acht Leistungsbereiche, die ineinandergreifen. Sie beauftragen einzeln oder als Gesamtpaket.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-plug"/></svg></span><span class="tag">Aktivtechnik &amp; Passivtechnik</span><h3>Glasfasermontage</h3><p>Montage von Verteilern, Patchfeldern und Abschlusspunkten. Sauber geführt, eindeutig beschriftet und betriebsbereit übergeben.</p></article>
+        <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-reel"/></svg></span><span class="tag">Kabel &amp; Trasse</span><h3>Glasfaserkabelverlegung</h3><p>Verlegung von Außen- und Innenkabeln in Rohr, Schacht und Gebäude. Zugkräfte und Biegeradien bleiben im Herstellerrahmen.</p></article>
+        <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-splice"/></svg></span><span class="tag">Fusionsspleißen</span><h3>LWL-Spleißtechnik</h3><p>Dämpfungsarme Fusionsspleiße mit modernen Spleißgeräten, auch an hochfaserigen Kabeln mit Farbcodierung nach Norm.</p></article>
+        <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-house"/></svg></span><span class="tag">FTTH · FTTB</span><h3>Glasfaser-Hausanschlüsse</h3><p>Vom Hausanschlusspunkt bis zur Glasfaserdose in der Wohnung. Abgestimmt mit Eigentümern, Bauherren und Netzbetreibern.</p></article>
+        <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-blow"/></svg></span><span class="tag">Mikrorohr · Kabel</span><h3>Einblasen von Glasfaserkabeln</h3><p>Schonendes Einblasen in Mikrorohrverbände über lange Strecken. Schnell, materialschonend und wirtschaftlich.</p></article>
+        <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-sleeve"/></svg></span><span class="tag">Spleißmuffen</span><h3>Muffenmontage</h3><p>Fachgerechte Montage und Abdichtung von Muffen im Schacht, am Mast und im Erdreich. Dicht, geschützt, dauerhaft.</p></article>
+        <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-trace"/></svg></span><span class="tag">OTDR · Dämpfungsmessung</span><h3>Glasfasermessung und Dokumentation</h3><p>Messung jeder Faser und lückenlose Dokumentation mit Messprotokollen. Ihre Grundlage für Abnahme und Gewährleistung.</p></article>
+        <article class="card"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-net"/></svg></span><span class="tag">Passive Netze</span><h3>Netzwerkinfrastruktur</h3><p>Strukturierte Verkabelung und Glasfaseranbindung für Gewerbe, Rechenzentren und Liegenschaften. Skalierbar geplant.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="ueber-uns" aria-labelledby="u-h">
+    <div class="wrap about">
+      <div class="about-text">
+        <div class="eyebrow">Über uns</div>
+        <h2 id="u-h">Ein Team, das Glasfaser nicht nur verlegt, sondern versteht.</h2>
+        <p class="lead" style="margin-bottom:22px">Wir sind ein spezialisierter Dienstleister für Glasfaser- und Telekommunikationsinfrastruktur.</p>
+        <p>Unsere Monteure, Spleißer und Bauleiter bringen Jahre an Praxis aus Netzausbau und Gebäudeanbindung mit. Das hilft in der Planung, weil wir wissen, was auf der Baustelle möglich ist. Und es hilft in der Ausführung, weil jeder Handgriff sitzt.</p>
+        <p>Wir arbeiten mit moderner Messtechnik und hochwertiger Ausrüstung, halten unsere Baustellen ordentlich und sprechen verständlich mit Auftraggebern, Behörden und Anwohnern. Sie haben einen festen Ansprechpartner, vom ersten Gespräch bis zur Abnahme.</p>
+        <p style="font:400 .8rem/1.5 var(--mono);color:var(--muted)">[PLATZHALTER: Gründungsjahr, Teamgröße, Zertifizierungen und Einsatzgebiet hier ergänzen]</p>
+      </div>
+      <div class="panel">
+        <h3>Worauf Sie sich verlassen können</h3>
+        <ul class="traits">
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><div><b>Fachkompetenz und Erfahrung</b><span>Geschultes Personal für Montage-, Spleiß- und Messarbeiten.</span></div></li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><div><b>Zuverlässigkeit und Termintreue</b><span>Klare Zeitpläne, die wir einhalten.</span></div></li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><div><b>Präzise, saubere Arbeitsweise</b><span>Ordnung im Schacht, am Verteiler und auf der Baustelle.</span></div></li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><div><b>Moderne Technik, hochwertige Ausrüstung</b><span>Aktuelle Spleiß- und Messgeräte, gewartet und kalibriert.</span></div></li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><div><b>Kundenorientierte Projektabwicklung</b><span>Ein Ansprechpartner, transparente Kommunikation.</span></div></li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><div><b>Qualitätsbewusstsein</b><span>Jede Faser gemessen, jedes Ergebnis dokumentiert.</span></div></li>
+        </ul>
+        <div class="fcode" aria-label="Farbcode der zwölf Fasern">
+          <p>Faserfarbcode 1–12</p>
+          <div>
+            <i style="--c:#1E6FD9" title="1 Blau"></i><i style="--c:#F28C1E" title="2 Orange"></i><i style="--c:#2FA84F" title="3 Grün"></i><i style="--c:#8B5A2B" title="4 Braun"></i><i style="--c:#8A949E" title="5 Grau"></i><i style="--c:#F4F6F8" title="6 Weiß"></i><i style="--c:#D93636" title="7 Rot"></i><i style="--c:#10151B" title="8 Schwarz"></i><i style="--c:#F2D21E" title="9 Gelb"></i><i style="--c:#7B3FB5" title="10 Violett"></i><i style="--c:#EE82B4" title="11 Rosa"></i><i style="--c:#2CC4C9" title="12 Türkis"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band dark" id="warum-wir" aria-labelledby="w-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Warum wir?</div>
+        <h2 id="w-h">Sechs Gründe, uns Ihr Netz anzuvertrauen.</h2>
+      </div>
+      <div class="why">
+        <div class="why-item"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-target"/></svg></span><h3>Professionelle Umsetzung</h3><p>Geplante Abläufe, klare Zuständigkeiten und ein Ergebnis, das der Messung standhält.</p></div>
+        <div class="why-item"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-shield"/></svg></span><h3>Zuverlässiger Partner</h3><p>Wir melden uns, wenn wir etwas zugesagt haben, und liefern, wenn es fällig ist.</p></div>
+        <div class="why-item"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-bolt"/></svg></span><h3>Moderne Technik</h3><p>Aktuelle Spleiß- und Messgeräte sowie bewährte Verfahren für Einblasen, Spleißen und Montage.</p></div>
+        <div class="why-item"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-flex"/></svg></span><h3>Flexible Projektlösungen</h3><p>Vom einzelnen Hausanschluss bis zur Trasse über mehrere Kilometer. Wir passen uns Ihrem Projekt an.</p></div>
+        <div class="why-item"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-trace"/></svg></span><h3>Hohe Qualitätsstandards</h3><p>Messprotokolle für jede Faser und dokumentierte Ergebnisse für Ihre Abnahme.</p></div>
+        <div class="why-item"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-chat"/></svg></span><h3>Persönliche Betreuung</h3><p>Ein fester Ansprechpartner, kurze Wege und Antworten in verständlicher Sprache.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="projekte" aria-labelledby="p-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Projekte und Referenzen</div>
+        <h2 id="p-h">Abgeschlossene Projekte im Überblick.</h2>
+        <p class="lead">Filtern Sie nach Leistung. Die Kacheln sind Platzhalter und lassen sich einzeln durch Projektfotos ersetzen.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Projekte filtern" id="filters"></div>
+      <div class="gallery" id="gallery"></div>
+      <p class="note">[PLATZHALTER: Illustrationen durch eigene Projektfotos ersetzen, Bildunterschrift = Projekt · Ort · Jahr]</p>
+    </div>
+  </section>
+
+  <section class="band alt" id="kontakt" aria-labelledby="k-h">
+    <div class="wrap contact">
+      <div>
+        <div class="eyebrow">Kontakt</div>
+        <h2 id="k-h">Sie planen ein Glasfaserprojekt? Wir sind Ihr Ansprechpartner. Kontaktieren Sie uns jetzt!</h2>
+        <p class="lead">Beschreiben Sie kurz Ihr Vorhaben. Wir melden uns mit einer Einschätzung und den nächsten Schritten.</p>
+        <ul class="cinfo">
+          <li><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-phone"/></svg></span><div><small>Telefon</small><a href="tel:+4917641945276" id="tel">0176 41945276</a></div></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-mail"/></svg></span><div><small>E-Mail</small><a href="mailto:info@tecnexis.de">info@tecnexis.de</a></div></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-pin"/></svg></span><div><small>Adresse</small><address>TecNexis<br>Alter Stadtweg 7a<br>38110 Braunschweig</address></div></li>
+        </ul>
+        <div class="map">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Schematische Kartendarstellung des Firmenstandorts">
+            <rect width="400" height="120" fill="#0A2342"/>
+            <g stroke="#1D4573" stroke-width="1"><path d="M0 30H400M0 70H400M0 105H400M60 0V120M150 0V120M250 0V120M340 0V120"/></g>
+            <path d="M-10 95C80 80 120 40 200 56S330 30 410 20" fill="none" stroke="#19C3D6" stroke-width="2.5" opacity=".7"/>
+            <circle cx="200" cy="56" r="16" fill="rgba(25,195,214,.2)"/><circle cx="200" cy="56" r="6" fill="#4FE3F2"/>
+          </svg>
+          <div class="map-body">
+            <p id="map-note">Die Karte wird erst geöffnet, wenn Sie externe Dienste freigeben. Beim Klick wechseln Sie zu Google Maps.</p>
+            <a class="btn btn-dark" id="map-link" href="https://www.google.com/maps/search/?api=1&query=Alter%20Stadtweg%207a%2C%2038110%20Braunschweig" target="_blank" rel="noopener noreferrer" hidden>Route planen</a>
+            <button class="btn btn-dark" id="map-allow" type="button">Externe Dienste freigeben</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h3>Projekt anfragen</h3>
+        <p>Pflichtfelder sind mit * markiert.</p>
+        <form id="form" novalidate>
+          <div class="grid2">
+            <div class="field"><label for="f-name">Name *</label><input id="f-name" name="name" type="text" autocomplete="name" required><span class="err" id="e-name">Bitte geben Sie Ihren Namen ein.</span></div>
+            <div class="field"><label for="f-firma">Unternehmen <i>(optional)</i></label><input id="f-firma" name="firma" type="text" autocomplete="organization"></div>
+          </div>
+          <div class="grid2">
+            <div class="field"><label for="f-mail">E-Mail-Adresse *</label><input id="f-mail" name="mail" type="email" autocomplete="email" required><span class="err" id="e-mail">Bitte geben Sie eine gültige E-Mail-Adresse ein.</span></div>
+            <div class="field"><label for="f-tel">Telefonnummer <i>(optional)</i></label><input id="f-tel" name="tel" type="tel" autocomplete="tel"><span class="err" id="e-tel">Bitte nutzen Sie nur Ziffern, Leerzeichen sowie + ( ) / -.</span></div>
+          </div>
+          <div class="field"><label for="f-betreff">Betreff *</label><input id="f-betreff" name="betreff" type="text" required><span class="err" id="e-betreff">Bitte nennen Sie einen Betreff.</span></div>
+          <div class="field"><label for="f-msg">Nachricht *</label><textarea id="f-msg" name="msg" required></textarea><span class="err" id="e-msg">Bitte beschreiben Sie Ihr Anliegen in mindestens 10 Zeichen.</span></div>
+          <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="web" type="text" tabindex="-1" autocomplete="off"></div>
+          <div class="field" style="margin-bottom:0"><label class="check" for="f-dsgvo"><input id="f-dsgvo" name="dsgvo" type="checkbox" required><span>Ich habe die <a href="#" data-legal="datenschutz">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden. *</span></label><span class="err" id="e-dsgvo">Bitte stimmen Sie der Datenverarbeitung zu.</span></div>
+          <button class="btn btn-primary" type="submit">Anfrage senden <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></button>
+          <div class="status" id="status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top" aria-label="TecNexis Fiber Connect, nach oben">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2l16 9v18l-16 9L4 29V11z" fill="none" stroke="#19C3D6" stroke-width="2"/><path d="M9 25c6 0 8-10 11-10s5 10 11 10" fill="none" stroke="#4FE3F2" stroke-width="2.2" stroke-linecap="round"/><circle cx="20" cy="15" r="2.2" fill="#fff"/></svg>
+          <span><b>TecNexis</b><small>Fiber Connect</small></span>
+        </a>
+        <p>Spezialist für Glasfasertechnik, Glasfasermontage und Telekommunikationsinfrastruktur. Sauber ausgeführt, gemessen und dokumentiert.</p>
+        <div class="social">
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.84-2 3.8-2 4.06 0 4.8 2.67 4.8 6.14V21h-4v-4.9c0-1.17-.02-2.67-1.63-2.67-1.63 0-1.88 1.27-1.88 2.58V21h-4z"/></svg></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6.5c0-.8.2-1.2 1.3-1.2H17V2.2C16.6 2.1 15.6 2 14.5 2 12 2 10.3 3.5 10.3 6.2V8H7.5v3.4h2.8V22H14V11.4h2.6L17 8z"/></svg></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.2-3.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Navigation</h4><ul><li><a href="#top">Start</a></li><li><a href="#ueber-uns">Über uns</a></li><li><a href="#warum-wir">Warum wir</a></li><li><a href="#projekte">Projekte</a></li><li><a href="#kontakt">Kontakt</a></li></ul></div>
+      <div><h4>Leistungen</h4><ul><li><a href="#leistungen">Glasfasermontage</a></li><li><a href="#leistungen">Kabelverlegung &amp; Einblasen</a></li><li><a href="#leistungen">LWL-Spleißtechnik &amp; Muffen</a></li><li><a href="#leistungen">Hausanschlüsse</a></li><li><a href="#leistungen">Messung &amp; Dokumentation</a></li></ul></div>
+      <div><h4>Kontakt</h4><ul><li><a href="tel:+4917641945276">0176 41945276</a></li><li><a href="mailto:info@tecnexis.de">info@tecnexis.de</a></li><li style="color:var(--on-dark-muted)">Alter Stadtweg 7a<br>38110 Braunschweig</li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> TecNexis. Alle Rechte vorbehalten.</span>
+      <div><button class="linkbtn" type="button" data-legal="impressum">Impressum</button><button class="linkbtn" type="button" data-legal="datenschutz">Datenschutz</button><button class="linkbtn" type="button" id="cookie-open">Cookie-Einstellungen</button></div>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie" id="cookie" role="dialog" aria-labelledby="c-h" aria-live="polite" hidden>
+  <div class="cookie-in">
+    <h3 id="c-h">Ihre Privatsphäre</h3>
+    <p>Diese Website nutzt nur technisch notwendige Funktionen. Externe Dienste wie Google Maps laden wir ausschließlich mit Ihrer Zustimmung. Details finden Sie in der <a href="#" data-legal="datenschutz">Datenschutzerklärung</a>.</p>
+    <label class="cookie-opt" for="c-ext"><input id="c-ext" type="checkbox"><span><b style="color:#fff">Externe Dienste</b> (z. B. Kartenanbieter) erlauben</span></label>
+    <div class="cookie-btns">
+      <button class="btn btn-primary" type="button" id="c-all">Alle akzeptieren</button>
+      <button class="btn btn-ghost" type="button" id="c-save">Auswahl speichern</button>
+      <button class="btn btn-ghost" type="button" id="c-nec">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+
+<div class="legal" id="legal" role="dialog" aria-modal="true" aria-labelledby="legal-t" hidden>
+  <div class="legal-box">
+    <div id="legal-body"></div>
+    <button class="btn btn-dark" type="button" id="legal-close">Schließen</button>
+  </div>
+</div>
+
+<template id="t-impressum">
+  <h2 id="legal-t">Impressum</h2>
+  <p>[PLATZHALTER: Angaben gemäß § 5 DDG durch die tatsächlichen Firmendaten ersetzen.]</p>
+  <h3>Anbieter</h3><p>TecNexis [Rechtsform ergänzen]<br>Alter Stadtweg 7a<br>38110 Braunschweig</p>
+  <h3>Vertreten durch</h3><p>[Name der Geschäftsführung]</p>
+  <h3>Kontakt</h3><p>Telefon: 0176 41945276<br>E-Mail: info@tecnexis.de</p>
+  <h3>Registereintrag</h3><p>Handelsregister: [Amtsgericht], HRB [Nummer]<br>Umsatzsteuer-ID: [DE000000000]</p>
+</template>
+<template id="t-datenschutz">
+  <h2 id="legal-t">Datenschutzerklärung</h2>
+  <p>[PLATZHALTER: Diese Vorlage ersetzt keine Rechtsberatung. Bitte vor Veröffentlichung rechtlich prüfen lassen.]</p>
+  <h3>Verantwortlicher</h3><p>TecNexis, Alter Stadtweg 7a, 38110 Braunschweig, info@tecnexis.de</p>
+  <h3>Kontaktformular</h3><p>Wir verarbeiten Name, E-Mail-Adresse, optionale Angaben und Ihre Nachricht ausschließlich zur Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. b und f DSGVO).</p>
+  <h3>Externe Dienste</h3><p>Karten oder andere Drittdienste werden erst nach Ihrer ausdrücklichen Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) geöffnet. Sie können diese jederzeit über die Cookie-Einstellungen widerrufen.</p>
+  <h3>Ihre Rechte</h3><p>Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch sowie Beschwerde bei einer Aufsichtsbehörde.</p>
+</template>
+
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  $('#year').textContent=new Date().getFullYear();
+
+  /* Navigation */
+  var burger=$('#burger'),nav=$('#nav');
+  burger.addEventListener('click',function(){var o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen')});
+  $$('#nav a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');burger.setAttribute('aria-expanded','false')})});
+
+  /* Hero: Faser-Canvas */
+  var cv=$('#fibers'),ctx=cv.getContext('2d'),W=0,H=0,dpr=1,N=8,pulses=[];
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){var r=cv.getBoundingClientRect();dpr=Math.min(window.devicePixelRatio||1,2);W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+  function fy(i,x,t){var b=H*(0.18+0.64*i/(N-1)),k=x/W;return b+Math.sin(k*5+i*.9+t*.35)*H*.06+Math.sin(k*11+i*1.7-t*.5)*H*.02+(k-.5)*H*.12*(i%2?1:-1)}
+  function seed(){pulses=[];for(var i=0;i<N;i++){for(var j=0;j<2;j++)pulses.push({i:i,x:Math.random()*W,v:60+Math.random()*120})}}
+  function draw(t){
+    ctx.clearRect(0,0,W,H);ctx.lineCap='round';
+    for(var i=0;i<N;i++){
+      ctx.beginPath();for(var x=-10;x<=W+10;x+=14){var y=fy(i,x,t);x===-10?ctx.moveTo(x,y):ctx.lineTo(x,y)}
+      ctx.strokeStyle='rgba(25,195,214,'+(0.12+0.05*(i%3))+')';ctx.lineWidth=1.4;ctx.stroke();
+    }
+    for(var p=0;p<pulses.length;p++){
+      var q=pulses[p];
+      for(var s=0;s<14;s++){var px=q.x-s*7,py=fy(q.i,px,t),a=(1-s/14);
+        ctx.beginPath();ctx.arc(px,py,(s===0?2.6:1.8)*a+.4,0,6.283);ctx.fillStyle='rgba(120,240,250,'+(a*.85)+')';ctx.fill()}
+      var g=ctx.createRadialGradient(q.x,fy(q.i,q.x,t),0,q.x,fy(q.i,q.x,t),22);g.addColorStop(0,'rgba(79,227,242,.55)');g.addColorStop(1,'rgba(79,227,242,0)');
+      ctx.fillStyle=g;ctx.fillRect(q.x-22,fy(q.i,q.x,t)-22,44,44);
+    }
+  }
+  var last=0;
+  function loop(ts){var dt=Math.min((ts-last)/1000||0,.05);last=ts;for(var p=0;p<pulses.length;p++){pulses[p].x+=pulses[p].v*dt;if(pulses[p].x>W+80)pulses[p].x=-20}draw(ts/1000);requestAnimationFrame(loop)}
+  size();seed();
+  if(reduce){draw(2)}else{requestAnimationFrame(loop)}
+  window.addEventListener('resize',function(){size();seed();if(reduce)draw(2)});
+
+  /* Galerie (generierte Platzhalter-Illustrationen) */
+  var CATS=['Glasfasermontage','Tiefbau','Spleißarbeiten','Hausanschlüsse','Netzwerkinfrastruktur'];
+  function art(type,v,id){
+    var c=v%2?['#0A2342','#123560']:['#061427','#0F3A63'];
+    var o='<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Platzhalter-Illustration: '+CATS[type]+'"><defs><linearGradient id="g'+id+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+c[0]+'"/><stop offset="1" stop-color="'+c[1]+'"/></linearGradient><radialGradient id="r'+id+'"><stop offset="0" stop-color="#4FE3F2" stop-opacity=".9"/><stop offset="1" stop-color="#4FE3F2" stop-opacity="0"/></radialGradient></defs><rect width="400" height="300" fill="url(#g'+id+')"/>';
+    var k,j;
+    if(type===0){
+      for(k=0;k<3;k++){var y=60+k*62;o+='<rect x="50" y="'+y+'" width="300" height="46" rx="6" fill="#0C2D52" stroke="#1D4573"/>';
+        for(j=0;j<12;j++){o+='<rect x="'+(66+j*23)+'" y="'+(y+10)+'" width="14" height="16" rx="3" fill="#061427" stroke="#2A6BA0"/>';if((j+k+v)%3!==0)o+='<circle cx="'+(73+j*23)+'" cy="'+(y+37)+'" r="2.4" fill="#4FE3F2"/>'}}
+      o+='<path d="M89 118C89 150 140 150 140 180M181 118C181 160 250 150 250 242M273 56C330 80 330 150 296 180" fill="none" stroke="#19C3D6" stroke-width="2.5" opacity=".85"/>';
+    }else if(type===1){
+      o+='<rect y="90" width="400" height="210" fill="#0B2A4B"/><rect y="150" width="400" height="150" fill="#0A2342"/><rect y="215" width="400" height="85" fill="#08203A"/>';
+      o+='<path d="M120 90L140 250H260L280 90z" fill="#050F1D"/><path d="M0 90H400" stroke="#4FE3F2" stroke-width="2" stroke-dasharray="10 8"/>';
+      var n=3+v%3;for(k=0;k<n;k++){o+='<circle cx="'+(165+k*34)+'" cy="'+(228-(k%2)*26)+'" r="13" fill="#0C2D52" stroke="#19C3D6" stroke-width="2.5"/><circle cx="'+(165+k*34)+'" cy="'+(228-(k%2)*26)+'" r="4" fill="#4FE3F2"/>'}
+    }else if(type===2){
+      o+='<circle cx="200" cy="140" r="70" fill="url(#r'+id+')"/><path d="M20 140H182" stroke="#8FD9E6" stroke-width="7" stroke-linecap="round"/><path d="M218 140H380" stroke="#8FD9E6" stroke-width="7" stroke-linecap="round"/><path d="M182 140H218" stroke="#fff" stroke-width="5"/>';
+      o+='<g stroke="#4FE3F2" stroke-width="2" stroke-linecap="round"><path d="M200 100v-22M200 180v22M170 110l-14-14M230 170l14 14M230 110l14-14M170 170l-14 14"/></g>';
+      o+='<circle cx="'+(90+v*20)+'" cy="236" r="34" fill="#0C2D52" stroke="#2A6BA0" stroke-width="2"/><circle cx="'+(90+v*20)+'" cy="236" r="12" fill="#4FE3F2"/>';
+    }else if(type===3){
+      o+='<path d="M0 240H400" stroke="#1D4573" stroke-width="2"/><path d="M250 240V150L330 100L400 150V240z" fill="#0C2D52" stroke="#2A6BA0" stroke-width="2" transform="translate(-30 0)"/><rect x="302" y="190" width="26" height="50" fill="#061427"/><rect x="250" y="160" width="26" height="26" fill="#19C3D6" opacity=".35"/>';
+      o+='<path d="M0 262C90 262 140 226 200 226S270 222 300 214" fill="none" stroke="#19C3D6" stroke-width="3"/><circle cx="'+(90+v*30)+'" cy="258" r="6" fill="#4FE3F2"/><circle cx="'+(90+v*30)+'" cy="258" r="18" fill="url(#r'+id+')"/>';
+    }else{
+      var P=[[200,70],[90,150],[310,150],[140,235],[260,235],[50,60],[350,60]];
+      o+='<g stroke="#2A6BA0" stroke-width="1.8" fill="none"><path d="M200 70L90 150M200 70L310 150M90 150L140 235M310 150L260 235M140 235L260 235M90 150L310 150M50 60L90 150M350 60L310 150"/></g><path d="M200 70L90 150L140 235" stroke="#19C3D6" stroke-width="3" fill="none"/>';
+      for(k=0;k<P.length;k++)o+='<circle cx="'+P[k][0]+'" cy="'+P[k][1]+'" r="'+(k===0?14:9)+'" fill="#0C2D52" stroke="#4FE3F2" stroke-width="2"/>';
+    }
+    return o+'</svg>';
+  }
+  var ITEMS=[[0,0],[1,0],[2,0],[3,0],[4,0],[1,1],[0,1],[3,1],[2,1]].map(function(a,i){return {t:a[0],v:a[1],i:i}});
+  var gal=$('#gallery'),fl=$('#filters'),cur='Alle';
+  ['Alle'].concat(CATS).forEach(function(c){var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=c;b.setAttribute('aria-pressed',c==='Alle');b.addEventListener('click',function(){cur=c;$$('.chip',fl).forEach(function(x){x.setAttribute('aria-pressed',x===b)});render()});fl.appendChild(b)});
+  function render(){gal.innerHTML='';ITEMS.forEach(function(it){if(cur!=='Alle'&&CATS[it.t]!==cur)return;var f=document.createElement('figure');f.className='shot';f.innerHTML=art(it.t,it.v,it.i)+'<figcaption><small>'+CATS[it.t]+'</small><span>Projektname · Ort · Jahr</span></figcaption>';gal.appendChild(f)})}
+  render();
+
+  /* Kontaktformular */
+  var form=$('#form'),status=$('#status');
+  function setErr(id,bad){var f=$('#'+id).closest('.field');f.classList.toggle('invalid',bad);$('#'+id).setAttribute('aria-invalid',bad?'true':'false');return bad}
+  function check(){
+    var bad=false;
+    bad=setErr('f-name',$('#f-name').value.trim().length<2)||bad;
+    bad=setErr('f-mail',!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test($('#f-mail').value.trim()))||bad;
+    var tel=$('#f-tel').value.trim();bad=setErr('f-tel',tel!==''&&!/^[+()\d\s\/-]{6,}$/.test(tel))||bad;
+    bad=setErr('f-betreff',$('#f-betreff').value.trim().length<3)||bad;
+    bad=setErr('f-msg',$('#f-msg').value.trim().length<10)||bad;
+    bad=setErr('f-dsgvo',!$('#f-dsgvo').checked)||bad;
+    return !bad;
+  }
+  $$('input,textarea',form).forEach(function(el){el.addEventListener('blur',function(){if(el.id!=='f-web'&&el.id!=='f-firma')check()})});
+  /* Versand: FORM_ENDPOINT zeigt auf send.php (liegt auf dem eigenen Webspace neben index.html) */
+  var FORM_ENDPOINT='send.php',MAIL_TO='info@tecnexis.de';
+  function mailtoHref(){
+    var b='Name: '+$('#f-name').value.trim()+'\nUnternehmen: '+$('#f-firma').value.trim()+'\nE-Mail: '+$('#f-mail').value.trim()+'\nTelefon: '+$('#f-tel').value.trim()+'\n\n'+$('#f-msg').value.trim();
+    return 'mailto:'+MAIL_TO+'?subject='+encodeURIComponent($('#f-betreff').value.trim())+'&body='+encodeURIComponent(b);
+  }
+  function say(title,text,withMail){
+    status.textContent='';
+    var b=document.createElement('b');b.textContent=title;status.appendChild(b);
+    status.appendChild(document.createTextNode(' '+text));
+    if(withMail){
+      var a=document.createElement('a');a.className='btn btn-dark';a.href=mailtoHref();a.textContent='E-Mail-Programm öffnen';
+      status.appendChild(a);
+      var s=document.createElement('small');s.textContent='Oder schreiben Sie direkt an '+MAIL_TO+'.';status.appendChild(s);
+    }
+    status.classList.add('show');
+  }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();status.classList.remove('show');
+    if($('#f-web').value){return}
+    if(!check()){var first=$('.field.invalid input, .field.invalid textarea',form);if(first)first.focus();return}
+    var btn=$('button[type=submit]',form);btn.disabled=true;
+    fetch(FORM_ENDPOINT,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+      .then(function(r){return r.json().then(function(j){return r.ok&&j&&j.ok})})
+      .then(function(ok){
+        if(!ok){throw new Error('send')}
+        say('Vielen Dank, Ihre Anfrage ist bei uns eingegangen.','Wir melden uns schnellstmöglich bei Ihnen.',false);
+        form.reset();
+      })
+      .catch(function(){say('Die Anfrage konnte nicht automatisch gesendet werden.','Bitte senden Sie sie über Ihr E-Mail-Programm. Ihre Eingaben sind bereits vorbereitet.',true)})
+      .then(function(){btn.disabled=false});
+  });
+
+  /* Cookie-Consent + externe Dienste */
+  var KEY='fl-consent',cookie=$('#cookie'),ext=$('#c-ext');
+  function load(){try{return JSON.parse(localStorage.getItem(KEY))}catch(e){return null}}
+  function save(v){try{localStorage.setItem(KEY,JSON.stringify(v))}catch(e){}}
+  var state=load();
+  function apply(){var on=!!(state&&state.ext);$('#map-link').hidden=!on;$('#map-allow').hidden=on;$('#map-note').textContent=on?'Beim Klick wechseln Sie zu Google Maps. Dort gelten die Datenschutzbestimmungen von Google.':'Die Karte wird erst geöffnet, wenn Sie externe Dienste freigeben. Beim Klick wechseln Sie zu Google Maps.';ext.checked=on}
+  function decide(v){state={ext:v,t:Date.now()};save(state);cookie.hidden=true;apply()}
+  apply();if(!state)cookie.hidden=false;
+  $('#c-all').addEventListener('click',function(){decide(true)});
+  $('#c-nec').addEventListener('click',function(){decide(false)});
+  $('#c-save').addEventListener('click',function(){decide(ext.checked)});
+  $('#cookie-open').addEventListener('click',function(){cookie.hidden=false;ext.checked=!!(state&&state.ext);$('#c-all').focus()});
+  $('#map-allow').addEventListener('click',function(){cookie.hidden=false;$('#c-ext').focus()});
+
+  /* Impressum / Datenschutz */
+  var legal=$('#legal'),lb=$('#legal-body'),opener=null;
+  function openLegal(k){opener=document.activeElement;lb.innerHTML='';lb.appendChild($('#t-'+k).content.cloneNode(true));legal.hidden=false;$('#legal-close').focus()}
+  function closeLegal(){legal.hidden=true;if(opener&&opener.focus)opener.focus()}
+  document.addEventListener('click',function(e){var t=e.target.closest('[data-legal]');if(t){e.preventDefault();openLegal(t.getAttribute('data-legal'))}});
+  $('#legal-close').addEventListener('click',closeLegal);
+  legal.addEventListener('click',function(e){if(e.target===legal)closeLegal()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!legal.hidden)closeLegal()});
+})();
+</script>
