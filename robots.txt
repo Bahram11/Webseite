@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /send.php
+Disallow: /bewerbung.php
+
+Sitemap: https://tecnexis.de/sitemap.xml
